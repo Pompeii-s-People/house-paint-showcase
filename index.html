@@ -1,0 +1,498 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>House Paint Studio · The front room</title><style>:root{--ink:#243d4a;--muted:#60717a;--line:#dce4e8;--blue:#3d6074;--wash:#f4f7f8;--select:#bf582d;--nav-height:64px;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--wash)}
+*{box-sizing:border-box}body{margin:0}button,input,select{font:inherit}button,a,select,input{-webkit-tap-highlight-color:transparent}button{cursor:pointer;color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--select);outline-offset:3px}button:disabled{cursor:default}.top-nav{height:var(--nav-height);position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;padding:0 max(20px,calc((100vw - 1200px)/2));margin:0;max-width:none}.nav-links{display:flex;align-items:stretch;gap:18px;flex:1;min-width:0}.nav-links>a{color:var(--ink);font-size:14px;font-weight:550;text-decoration:none;padding:14px 0;border-bottom:2px solid transparent;line-height:1.2}.nav-links>a[aria-current=page]{color:#244f65;border-color:#456e84}.nav-actions{display:flex;gap:2px;align-items:center}.icon-button{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;border-radius:6px;padding:11px}.icon-button:hover{background:#edf3f5}.icon-button svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}.download-menu{position:absolute;right:max(20px,calc((100vw - 1200px)/2));top:58px;min-width:215px;background:#fff;border:1px solid #bccbd3;border-radius:9px;box-shadow:0 12px 35px #18334024;padding:6px}.download-menu button{display:block;width:100%;padding:11px 13px;text-align:left;background:white;border:0;border-radius:4px;min-height:44px;font-size:14px}.download-menu button:hover,.download-menu button:focus{background:#edf3f5}.nav-status{position:fixed;z-index:50;bottom:18px;left:50%;transform:translateX(-50%);background:#243d4a;color:white;font-size:13px;padding:10px 16px;border-radius:8px;box-shadow:0 4px 16px #0002;pointer-events:none;max-width:90vw}.nav-status:empty{display:none}#nav-copy-field{position:fixed;z-index:50;bottom:12px;left:5vw;width:90vw;padding:13px;border:2px solid var(--select);background:white;color:var(--ink)}
+.studio,.quote-content{max-width:1200px;margin:0 auto;padding:24px 24px 48px}.studio-heading{padding:0 0 18px}.studio-heading h1{font-family:Georgia,serif;font-size:34px;font-weight:400;line-height:1.1;margin:0 0 10px}.current-template{font-size:15px;line-height:1.4;margin:0}.current-template strong{font-weight:650}.template-subtitle{font-size:12px;font-style:italic;color:var(--muted);margin:4px 0 0}.house-stage{position:sticky;top:var(--nav-height);z-index:10;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden;box-shadow:0 8px 22px #243d4a06}.show-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);font-size:13px}.show-options{display:flex;gap:15px;align-items:center}.show-options label{display:flex;gap:6px;align-items:center;min-height:32px;white-space:nowrap;cursor:pointer}.show-options input{width:16px;height:16px;margin:0;accent-color:var(--blue)}.zoom-control{display:flex;align-items:center;gap:7px}.zoom-control select{min-height:34px;border:1px solid #b2c3cc;border-radius:6px;padding:5px 7px;color:var(--ink);background:white;font-size:13px}.house-viewport{overflow:auto;max-height:46vh;overscroll-behavior:contain;scrollbar-width:thin}#house{padding:0 6px}#house>svg{width:100%;height:auto;display:block;max-width:none}#house [data-zone],#house [data-zone-label]{cursor:pointer}#house .selected-zone{stroke:var(--select)!important;stroke-width:3!important;stroke-dasharray:none!important}#house .selected-number circle{fill:var(--select)!important;stroke:var(--select)!important}#house .selected-number text{fill:#fff!important}#house .selected-number path,#house .selected-number line{stroke:var(--select)!important;stroke-width:2!important}.no-numbers #numbering{display:none}.outline-view [data-zone]{fill:#fff!important}.reconstruction,#left-window-reference-star{display:none}.selection-name{font-size:12px;line-height:1.3;min-height:30px;padding:8px 15px;border-top:1px solid var(--line);color:var(--muted);margin:0}.selection-name strong{color:var(--select)}.design-controls{padding-top:24px}.instruction{font-family:Georgia,serif;font-size:26px;font-weight:400;margin:0 0 16px;line-height:1.2}.mode-tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid #b4c5ce;margin:0 0 17px}.mode-tabs button{border:0;border-bottom:3px solid transparent;background:none;min-height:44px;font-weight:600;font-size:15px;padding:10px 16px}.mode-tabs button[aria-selected=true]{border-color:var(--blue);color:#234f65;background:#e9f0f3}.template-choice{display:flex;align-items:center;gap:13px;margin-bottom:18px}.template-choice label{font-size:13px;white-space:nowrap}.template-choice select{min-height:42px;border:1px solid #adbfca;border-radius:7px;background:white;padding:9px;color:var(--ink);font-size:14px;width:min(100%,580px)}.area-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px 16px}.area-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:8px;padding:10px 11px;min-width:0}.area-card.active{border-color:#d29b80;box-shadow:0 0 0 1px #d29b8055}.area-title{display:flex;align-items:center;gap:8px;margin-bottom:8px;min-height:32px}.area-title h3{font-size:13px;font-weight:600;line-height:1.25;margin:0;min-width:0}.area-number{width:32px;height:32px;flex:none;border:1px solid #7a929f;border-radius:50%;background:white;font-size:13px;font-weight:650;display:grid;place-items:center;padding:0}.area-number[aria-pressed=true]{background:var(--select);border-color:var(--select);color:#fff}.swatch-picker{height:34px;display:flex;align-items:center;gap:8px;width:100%;padding:4px 7px;border:1px solid #b4c4cd;border-radius:5px;background:white}.swatch-picker .swatch{height:24px;flex:1;border-radius:2px;box-shadow:inset 0 0 0 1px #00000017}.swatch-picker svg{width:15px;height:15px;fill:none;stroke:#506b79;stroke-width:1.7}.read-only-swatch{height:28px;border-radius:4px;box-shadow:inset 0 0 0 1px #00000017}.paint-subtitle{font-size:11px;line-height:1.25;margin:6px 0 0;color:var(--muted);min-height:14px;overflow-wrap:anywhere}.swatch.existing,.read-only-swatch.existing{background:repeating-linear-gradient(135deg,#eef1f2 0px,#eef1f2 5px,#d4dce1 6px,#eef1f2 7px)!important}.swatch-menu{position:fixed;z-index:100;background:white;border:1px solid #aabfc9;border-radius:9px;box-shadow:0 10px 35px #16364530;padding:10px;display:grid;grid-template-columns:repeat(5,34px);gap:8px}.swatch-menu[hidden]{display:none}.swatch-option{width:34px;height:34px;min-height:0;border:1px solid #71879366;border-radius:5px;padding:0;position:relative;background:var(--swatch)}.swatch-option[aria-selected=true]{outline:2px solid var(--select);outline-offset:2px}.swatch-option.existing{background:repeating-linear-gradient(135deg,#eef1f2 0px,#eef1f2 5px,#bbc9d0 6px,#eef1f2 7px)}.custom-swatch{background:conic-gradient(#bfc9d0,#98a9b7,#768b9a,#acad97,#dcd8d0,#bfc9d0)}.custom-swatch input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.studio-footer{font-size:11px;color:var(--muted);margin:20px 0 0;line-height:1.5}.studio-footer a{color:var(--blue)}.print-key{display:none}[hidden]{display:none!important}
+.quote-content h1{font-family:Georgia,serif;font-size:34px;font-weight:400;margin:0 0 8px}.quote-design-name{font-size:15px;color:var(--muted);margin:0 0 20px}.quote-drawing{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden}.quote-drawing svg{width:100%;height:auto;display:block}.quote-content h2{font-family:Georgia,serif;font-size:25px;font-weight:400;margin:24px 0 12px}.dimension-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.dimension{background:white;border-top:2px solid #9cb4c1;padding:14px}.dimension dt{font-size:12px;line-height:1.35;color:var(--muted)}.dimension dd{font-family:Georgia,serif;font-size:27px;margin:8px 0 3px}.dimension small{font-size:10px;color:var(--muted)}.quote-scope{display:grid;grid-template-columns:1fr 1fr;gap:28px}.quote-scope ul{padding-left:18px;font-size:14px;line-height:1.65;margin:0}.quote-table{width:100%;border-collapse:collapse;background:white;font-size:13px}.quote-table th,.quote-table td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line)}.quote-table th{font-size:12px;color:var(--muted)}.quote-table .paint-dot{display:inline-block;width:23px;height:23px;vertical-align:middle;margin-right:9px;border:1px solid #6f85944d;border-radius:3px}.quote-table th:first-child,.quote-table td:first-child{width:40px}.quote-source{font-size:11px;color:var(--muted);line-height:1.5;margin-top:20px}.quote-door{font-size:13px;line-height:1.5;margin-top:16px}
+@media(max-width:900px){.area-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.studio,.quote-content{padding:20px 18px 36px}.house-viewport{max-height:42vh}}
+@media(max-width:600px){.top-nav{padding:0 10px;gap:5px}.nav-links{gap:8px}.nav-links>a{font-size:12px;line-height:1.15;padding:9px 2px}.nav-actions{gap:0}.icon-button{padding:12px;width:42px;min-width:42px}.studio,.quote-content{padding:18px 12px 32px}.studio-heading h1{font-size:27px}.current-template{font-size:13px}.template-subtitle{font-size:11px}.studio-heading{padding-bottom:14px}.show-bar{padding:7px 10px;gap:6px;font-size:12px}.show-options{gap:9px}.show-options label{gap:4px}.show-options input{height:15px;width:15px}.zoom-control{gap:4px}.zoom-control select{max-width:106px;min-height:32px;font-size:12px;padding:4px}.selection-name{font-size:11px;min-height:27px;padding:6px 10px}.instruction{font-size:22px;margin-bottom:12px}.design-controls{padding-top:19px}.mode-tabs{margin-bottom:13px}.mode-tabs button{font-size:14px}.template-choice{display:block;margin-bottom:14px}.template-choice label{display:block;font-size:12px;margin-bottom:5px}.template-choice select{width:100%;min-height:40px;font-size:13px;padding:7px}.area-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.area-card{padding:8px}.area-title{gap:6px;margin-bottom:6px}.area-title h3{font-size:12px}.area-number{height:30px;width:30px;font-size:12px}.paint-subtitle{font-size:10.5px;line-height:1.3}.quote-content h1{font-size:28px}.dimension-grid{grid-template-columns:repeat(2,1fr);gap:8px}.dimension{padding:10px}.dimension dd{font-size:24px}.quote-scope{grid-template-columns:1fr;gap:0}.quote-scope ul{font-size:13px}.quote-table{font-size:11px}.quote-table th,.quote-table td{padding:8px 6px}.quote-table .paint-dot{width:16px;height:16px;margin-right:5px}.quote-content h2{font-size:23px}.download-menu{right:10px}}
+@media print{@page{size:letter landscape;margin:12mm}body{background:white}.top-nav,.nav-status,#nav-copy-field,.design-controls,.studio-footer,.show-bar,.selection-name,.swatch-menu{display:none!important}.studio,.quote-content{max-width:none;padding:0}.studio-heading{padding:0}.studio-heading h1{font-size:24px}.house-stage{position:static;border:0;box-shadow:none}.house-viewport{max-height:none;overflow:visible}#house{padding:0}#house>svg{width:100%!important}.print-key{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 20px;font-size:9px;margin-top:12px}.print-key>div{display:flex;gap:7px;align-items:center}.print-key i{display:inline-block;width:22px;height:22px;border:1px solid #8299a5;flex:none}.quote-content h1{font-size:27px}.quote-content h2{font-size:20px;break-after:avoid}.quote-drawing{border:0}.quote-table th,.quote-table td{padding:7px}.quote-table tr,.dimension,.quote-scope{break-inside:avoid}.quote-scope{font-size:11px}.quote-source{font-size:9px}}
+html{scroll-padding-top:calc(var(--nav-height) + var(--house-height,0px) + 16px)}
+.area-card{cursor:pointer}
+
+.more-below{display:none}
+@media screen and (max-width:600px){.more-below{position:fixed;bottom:12px;left:50%;transform:translateX(-50%);z-index:22;border:1px solid #b5c7cf;border-radius:22px;background:#fffefb;color:#3d6074;padding:8px 15px;font-size:12px;box-shadow:0 3px 12px #243d4a17;cursor:pointer;display:block}.more-below[hidden]{display:none}}
+@media print{@page{size:letter landscape;margin:10mm}.quote-overview{break-after:page}.quote-overview .quote-drawing svg{height:115mm;width:100%}.quote-overview .quote-design-name{font-size:12px;margin:0 0 7px}.quote-overview h2{margin:8px 0 5px;font-size:18px}.quote-overview .dimension-grid{margin:7px 0 0;gap:10px}.quote-overview .dimension{padding:8px}.quote-overview .dimension dd{font-size:22px;margin:5px 0 2px}.quote-overview .dimension dt{font-size:10px}.quote-overview .dimension small{font-size:8px}.quote-details-sheet{break-inside:avoid-page}.quote-details-sheet h2{font-size:17px;margin:8px 0 5px}.quote-details-sheet .quote-scope{grid-template-columns:1fr 1fr;gap:24px}.quote-details-sheet ul{padding-left:15px;font-size:10px;line-height:1.4;margin:0 0 9px}.quote-details-sheet .quote-table{font-size:10px}.quote-details-sheet .quote-table th,.quote-details-sheet .quote-table td{padding:4px 8px}.quote-details-sheet .paint-dot{width:16px;height:16px}.quote-details-sheet .quote-source{font-size:8px;line-height:1.3;margin-top:9px}.quote-details-sheet .quote-door{font-size:10px;margin:7px 0}.more-below{display:none!important}}
+
+@media print{html{background:white!important}.quote-details-sheet .quote-table{font-size:11.5px}.quote-details-sheet .quote-table th,.quote-details-sheet .quote-table td{padding:5px 8px}.quote-details-sheet ul{font-size:11px}.quote-details-sheet h2{font-size:19px}}
+
+#house>svg.fit-view{max-height:46vh}
+.materials-layout{display:grid;grid-template-columns:190px minmax(0,1120px);max-width:1370px;margin:auto;align-items:start;gap:10px}.materials-layout main{width:100%;min-width:0}.materials-outline{position:sticky;top:80px;padding:25px 8px 18px 18px;font-size:13px}.materials-outline summary{font-weight:650;list-style:none;pointer-events:none;margin-bottom:8px;min-height:25px}.materials-outline summary::-webkit-details-marker{display:none}.materials-outline nav{display:grid;gap:2px}.materials-outline a{padding:9px 11px;text-decoration:none;color:#60717a;border-left:2px solid transparent;line-height:1.35}.materials-outline a:hover,.materials-outline a[aria-current=location]{background:#e7eff3;color:#244f65;border-color:#456e84}.materials-page{scroll-margin-top:132px}.materials-page [id]{scroll-margin-top:132px}.materials-page .icon-button{border:0;border-radius:6px}.materials-page .more-below{border-radius:22px;min-height:0}
+@media(max-width:999px){.materials-layout{display:block}.materials-outline{top:64px;z-index:25;padding:0;background:#fff;border-bottom:1px solid #dce4e8}.materials-outline summary{pointer-events:auto;list-style:disclosure-closed;min-height:42px;padding:10px 20px;margin:0;cursor:pointer}.materials-outline details[open] summary{list-style:disclosure-open}.materials-outline nav{max-height:55vh;overflow:auto;padding:0 12px 8px;grid-template-columns:1fr 1fr}.materials-outline a{padding:10px;font-size:12px}}
+@media(max-width:900px){#house>svg.fit-view{max-height:42vh}}
+@media print{#house>svg.fit-view{max-height:none!important}.materials-layout{display:block}.materials-outline{display:none!important}}
+@media(max-width:600px){.show-bar{flex-wrap:wrap}.show-options{flex-wrap:wrap}.zoom-control{margin-left:auto}}
+
+.photo-content{max-width:1200px;margin:auto;padding:24px}.photo-content h1{font:400 34px Georgia,serif;margin:0 0 10px}.photo-content h2{font:400 26px Georgia,serif}.photo-image{display:block;width:100%;height:auto;border-radius:9px}.photo-content p{font-size:14px;line-height:1.6}.photo-content button{border:1px solid #a9bdc8;background:white;border-radius:6px;padding:11px 15px;min-height:44px}.photo-content textarea{width:100%;height:430px;resize:vertical;padding:15px;border:1px solid #afc3cd;border-radius:6px;margin-top:14px;font:13px/1.6 system-ui;color:#243d4a;background:white}.photo-map{margin-top:22px}.photo-map summary{cursor:pointer;min-height:40px}.photo-map svg{width:100%;height:auto}
+@media(max-width:600px){.nav-links{gap:5px}.nav-links>a{font-size:11px}.icon-button{width:34px;min-width:34px;padding:8px}.photo-content{padding:18px 12px}.photo-content h1{font-size:28px}.photo-content textarea{height:370px}}
+@media print{.photo-content{padding:0}.photo-content textarea,.photo-content button{display:none}.photo-map{display:none}}
+
+.top-nav.has-template{height:auto;min-height:80px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:0 14px;padding-top:3px;padding-bottom:4px}.nav-template{grid-column:1/-1;margin:0 0 4px;font-size:11px;color:#60717a;line-height:1.3}.download-menu{top:calc(var(--nav-height) - 6px)}.materials-outline{top:calc(var(--nav-height) + 16px)}html.materials-root{scroll-padding-top:calc(var(--nav-height) + var(--sections-height,0px) + 16px)}.materials-page [id]{scroll-margin-top:0}
+@media(max-width:999px){.materials-outline{top:var(--nav-height)}.materials-outline summary{list-style:none;display:flex;align-items:center;justify-content:space-between}.materials-outline summary::after{content:'⌄';font-size:21px;line-height:1;transition:transform .12s}.materials-outline details[open] summary::after{transform:rotate(180deg)}}
+@media(max-width:600px){.top-nav.has-template{gap:0 5px}.nav-template{font-size:10px}}
+
+.design-mode-bar{position:sticky;top:calc(var(--nav-height) + var(--house-height,0px));z-index:12;background:var(--wash);padding-top:14px;padding-bottom:1px}.design-controls{padding-top:0}.design-mode-bar .mode-tabs{margin-bottom:14px}html.design-root{scroll-padding-top:calc(var(--nav-height) + var(--house-height,0px) + var(--mode-height,0px) + 16px)}#current-selection-readonly{display:block;padding:11px 0;font-size:14px;color:#3d6074}.house-footer{text-align:center;padding:28px 18px 24px;font-size:12px;color:#60717a;line-height:1.5}.house-footer small{display:block;font-size:10px;margin-top:3px}.materials-dock{position:sticky;top:var(--nav-height);z-index:26;background:#f4f7f8;border-bottom:1px solid #d6e2e7;padding:8px max(18px,calc((100vw - 1320px)/2)) 6px}.totals-actions{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#60717a;margin-bottom:5px}.totals-actions #reset{font-size:11px;min-height:30px;padding:5px 9px;background:transparent;border-color:#c5d0d6}.materials-dock .totals{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0}.materials-dock .total{padding:10px 13px;border-radius:7px}.materials-dock .total small{font-size:11px}.materials-dock .total strong{font-size:25px;margin:5px 0 0;line-height:1.1}.materials-dock .total p{display:none}#totals-status{margin:4px 0 0;font-size:10px;color:#60717a}.materials-outline{top:calc(var(--nav-height) + var(--totals-height,0px) + 16px)}html.materials-root{scroll-padding-top:calc(var(--nav-height) + var(--totals-height,0px) + var(--sections-height,0px) + 16px)}
+@media(max-width:999px){.materials-outline{top:calc(var(--nav-height) + var(--totals-height,0px))}}
+@media(max-width:600px){.materials-dock{padding:6px 12px}.materials-dock .totals{gap:6px}.materials-dock .total{padding:8px 7px}.materials-dock .total small{font-size:9px;line-height:1.25;min-height:23px}.materials-dock .total strong{font-size:18px;overflow-wrap:anywhere}.design-mode-bar .instruction{font-size:20px;margin-bottom:10px}#current-selection-readonly{font-size:13px;padding:8px 0}}
+@media print{.design-mode-bar,.house-footer{display:none!important}.materials-dock{position:static;padding:0;border:0}.totals-actions{display:none}.materials-dock .total strong{font-size:21px}.materials-dock .total p{display:block;font-size:9px}.materials-dock .totals{margin:10px 0}}
+
+.nav-actions[hidden]{display:none!important}.top-nav .nav-links{grid-column:1/-1}.downloads-content{max-width:1100px;margin:auto;padding:24px}.downloads-content h1{font:400 34px Georgia,serif;margin:0 0 10px}.downloads-content h2{font:400 25px Georgia,serif;margin:25px 0 12px}.downloads-content p{font-size:14px;line-height:1.6}.download-actions{display:flex;flex-wrap:wrap;gap:10px}.download-actions button{min-height:44px;padding:11px 16px;border:1px solid #a9bdc8;border-radius:7px;background:white}.handoff-preview{margin-top:18px}.handoff-preview summary{cursor:pointer;min-height:36px}.handoff-preview textarea{width:100%;height:400px;font:12px/1.5 monospace;padding:15px;border:1px solid #afc3cd;border-radius:7px}
+@media(max-width:600px){.top-nav .nav-links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;width:100%}.nav-links>a{font-size:11px;padding:10px 2px;min-height:44px;display:flex;align-items:center;justify-content:center;text-align:center}.downloads-content{padding:18px 12px}.downloads-content h1{font-size:28px}.download-actions{display:grid;grid-template-columns:1fr}.download-actions button{text-align:left}}
+@media print{.downloads-content{padding:0}.download-actions,.handoff-preview{display:none}}
+
+/* Shared screen presentation. Print/PDF layout stays in its existing rules. */
+@media screen {
+  :root { --wash: #f4f7f6; --muted: #50636d; }
+  body { font-size: 1.125rem; line-height: 1.55; }
+  button, input, select, textarea { font: inherit; }
+  a { text-underline-offset: .18em; }
+  button, select, input:not([type=checkbox]):not([type=color]) { min-height: 2.75rem; }
+  :is(button,a,input,select,summary,textarea):focus-visible { outline: 3px solid #a94720; outline-offset: 3px; }
+  p, li, dd, label, h1, h2, h3 { overflow-wrap: anywhere; }
+  .top-nav, .top-nav.has-template { height: auto; min-height: 4.5rem; display: flex; flex-wrap: wrap; gap: .25rem 1rem; padding: .6rem max(1rem,calc((100% - 1400px)/2)); background: #fff; }
+  .top-nav .nav-links { display: flex; flex-wrap: wrap; gap: .25rem; width: auto; flex: 1; }
+  .nav-links>a { display: flex; align-items: center; justify-content: center; min-height: 3rem; padding: .65rem .9rem; border: 0; border-radius: .5rem; font-size: 1rem; line-height: 1.35; text-align: center; }
+  .nav-links>a:hover { background: #edf2f4; }
+  .nav-links>a[aria-current=page] { background: #345d70; color: #fff; }
+  .nav-template { flex-basis: 100%; font-size: .875rem; margin: .15rem .9rem 0; color: var(--muted); }
+  .mobile-navigation { display: none; }
+  .nav-status { font-size: 1rem; line-height: 1.4; }
+  .studio, .quote-content, .photo-content, .downloads-content { max-width: 1400px; padding: 2rem clamp(1rem,3vw,2.5rem) 4rem; }
+  .studio-heading { padding: 0; }
+  .studio-heading h1, .quote-content h1, .photo-content h1, .downloads-content h1 { font-size: clamp(1.8rem,1.4rem + 1.2vw,2.6rem); line-height: 1.2; margin: 0 0 .6rem; }
+  .current-template, .quote-design-name { font-size: 1.0625rem; line-height: 1.5; }
+  .template-subtitle { font-size: .9375rem; color: var(--muted); }
+  .house-stage { top: calc(var(--nav-height) + .75rem); border-radius: .9rem; }
+  .show-bar { padding: .5rem .9rem; font-size: .9375rem; flex-wrap: wrap; gap: .25rem 1rem; }
+  .show-options { gap: .75rem; flex-wrap: wrap; }
+  .show-options label { min-height: 2.75rem; gap: .5rem; white-space: normal; }
+  .show-options input { width: 1.2rem; height: 1.2rem; flex: none; }
+  .zoom-control { margin-left: auto; font-size: .9375rem; }
+  .zoom-control select { font-size: .9375rem; max-width: none; min-height: 2.75rem; }
+  .house-viewport { max-height: 42dvh; scrollbar-width: auto; }
+  #house>svg.fit-view { max-height: 42dvh; }
+  .selection-name { min-height: 2.75rem; font-size: .9375rem; line-height: 1.4; padding: .65rem .9rem; }
+  .design-controls { min-width: 0; padding: 0; }
+  .design-mode-bar { position: static; padding-top: 0; }
+  .design-mode-bar .instruction { font-size: 1.6rem; line-height: 1.3; margin: 0 0 1rem; }
+  .mode-tabs { background: #e7eef1; border: 1px solid #bcccd3; border-radius: .65rem; overflow: hidden; }
+  .mode-tabs button { font-size: 1.0625rem; min-height: 3rem; border-bottom-width: 3px; padding: .65rem; }
+  .mode-tabs button[aria-selected=true] { color: #fff; background: #345d70; border-color: #345d70; }
+  .mode-help { font-size: 1rem; color: var(--muted); margin: -.15rem 0 1rem; }
+  .template-choice { display: block; margin: 0 0 1.25rem; }
+  .template-choice label { display: block; font-size: 1rem; margin-bottom: .4rem; white-space: normal; }
+  .template-choice select { width: 100%; font-size: 1.0625rem; min-height: 3rem; padding: .65rem; }
+  #current-selection-readonly { font-size: 1.0625rem; padding: .5rem 0; }
+  .area-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: .85rem; }
+  .area-card { padding: 1rem; border-radius: .7rem; }
+  .area-card:hover { border-color: #8aa1ae; }
+  .area-card.active { border-color: #a94720; box-shadow: 0 0 0 2px #a9472020; }
+  .area-title { gap: .65rem; margin-bottom: .75rem; }
+  .area-title h3 { font-size: 1rem; line-height: 1.4; }
+  .area-number { width: 2.75rem; height: 2.75rem; font-size: 1rem; }
+  .swatch-picker { min-height: 3rem; height: auto; padding: .4rem .5rem; }
+  .swatch-picker .swatch { min-height: 2rem; }
+  .read-only-swatch { height: 2.5rem; }
+  .paint-subtitle { font-size: .9375rem; line-height: 1.45; margin-top: .55rem; }
+  .swatch-menu { width: min(26rem,calc(100vw - 1rem)); max-height: min(32rem,calc(100dvh - 1rem)); overflow-y: auto; overscroll-behavior: contain; display: grid; grid-template-columns: minmax(0,1fr); gap: .35rem; padding: .65rem; border-radius: .75rem; scrollbar-width: auto; }
+  .swatch-menu-heading { display: flex; align-items: center; justify-content: space-between; gap: .7rem; position: sticky; top: -.65rem; z-index: 1; padding: .25rem 0 .6rem; background: #fff; font-size: 1rem; }
+  .swatch-dismiss { min-height: 2.75rem; padding: .4rem .7rem; border: 1px solid #9aafb9; border-radius: .4rem; background: #fff; font-size: 1rem; }
+  .swatch-option { width: 100%; height: auto; min-height: 3.5rem; display: flex; align-items: center; gap: .75rem; padding: .55rem .7rem; background: #fff; text-align: left; border: 1px solid #c5d1d7; font-size: 1rem; }
+  .swatch-option.existing { background: #fff; }
+  .swatch-option[aria-pressed=true] { outline: 2px solid #a94720; outline-offset: -2px; background: #faf3ec; }
+  .paint-option-chip { display: block; flex: none; width: 2.5rem; height: 2.5rem; border: 1px solid #536b7955; border-radius: .3rem; background: var(--swatch); }
+  .existing .paint-option-chip { background: repeating-linear-gradient(135deg,#eef1f2 0,#eef1f2 5px,#aebdc6 6px,#eef1f2 7px); }
+  .paint-option-name { display: block; min-width: 0; line-height: 1.4; }
+  .paint-option-name small { display: block; font-size: .875rem; color: var(--muted); }
+  .custom-swatch .paint-option-chip { background: conic-gradient(#bfc9d0,#98a9b7,#768b9a,#acad97,#dcd8d0,#bfc9d0); }
+  .custom-swatch:focus-within { outline: 3px solid #a94720; outline-offset: 2px; }
+  .studio-footer, .house-footer { font-size: .9375rem; line-height: 1.6; }
+  .house-footer small { font-size: .875rem; }
+  .photo-content p, .downloads-content p, .quote-source, .quote-door { font-size: 1rem; line-height: 1.65; max-width: 76ch; }
+  .photo-content h2, .downloads-content h2, .quote-content h2 { font-size: 1.65rem; line-height: 1.3; }
+  .photo-content textarea, .handoff-preview textarea { font-size: 1rem; max-width: 100%; line-height: 1.6; }
+  .photo-map summary, .handoff-preview summary { min-height: 3rem; font-size: 1rem; }
+  .download-actions { gap: .75rem; }
+  .download-actions button { min-height: 3rem; padding: .8rem 1rem; font-size: 1rem; }
+  .downloads-content>section { margin-top: 1.5rem; padding: .5rem 1.25rem 1.25rem; background: #fff; border: 1px solid var(--line); border-radius: .8rem; }
+  .quote-scope ul { font-size: 1rem; line-height: 1.7; }
+  .dimension dt, .dimension small { font-size: .9375rem; }
+  .dimension dd { font-size: 1.7rem; }
+  .quote-table { font-size: 1rem; table-layout: fixed; }
+  .quote-table th, .quote-table td { overflow-wrap: anywhere; padding: .8rem; }
+  .quote-table th { font-size: .9375rem; }
+  .quote-table th:first-child, .quote-table td:first-child { width: 3.5rem; }
+  .materials-page { font-size: 1.125rem; }
+  .materials-page main { padding: 1.5rem clamp(1rem,3vw,2rem) 4rem; }
+  .materials-page h1 { font-size: 2.2rem; line-height: 1.25; margin-top: .5rem; }
+  .materials-page h2 { font-size: 1.65rem; line-height: 1.35; }
+  .materials-page :is(.lead,.minor,.note,.sources,.links>div,.links p) { font-size: 1rem; line-height: 1.65; max-width: 76ch; }
+  .materials-page :is(.field label,.assumptions label,legend) { font-size: 1rem; line-height: 1.45; }
+  .materials-page :is(select,input[type=number],button) { font-size: 1rem; min-height: 3rem; }
+  .materials-page .choices { font-size: 1rem; gap: .5rem 1.25rem; }
+  .materials-page .choices label { display: flex; align-items: flex-start; gap: .65rem; padding: .5rem 0; margin: 0; }
+  .materials-page .choices input { flex: none; width: 1.25rem; height: 1.25rem; margin-top: .2rem; }
+  .materials-page .assumptions { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .materials-page .assumptions .pair { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .materials-page .assumptions input { min-width: 0; }
+  .materials-page .note { padding: 1.1rem 1.25rem; }
+  .materials-layout { grid-template-columns: 13.5rem minmax(0,1fr); max-width: 1440px; gap: 0; }
+  .materials-outline { font-size: 1rem; padding-left: 1rem; }
+  .materials-outline a { min-height: 2.75rem; font-size: .9375rem; padding: .7rem; }
+  .materials-outline summary { font-size: 1rem; }
+  .materials-dock { padding: .65rem max(1rem,calc((100% - 1400px)/2)); }
+  .totals-actions, .totals-actions #reset, #totals-status { font-size: .875rem; }
+  .totals-actions #reset { min-height: 2.75rem; padding: .4rem .65rem; }
+  .materials-dock .total { padding: .75rem 1rem; }
+  .materials-dock .total small { font-size: .9375rem; line-height: 1.4; }
+  .materials-dock .total strong { font-size: 1.7rem; margin-top: .4rem; line-height: 1.2; }
+  .materials-page .table-wrap table { font-size: 1rem; }
+  .materials-page .table-wrap :is(th,td p) { font-size: .9375rem; line-height: 1.5; }
+  .materials-page .table-wrap td input { font-size: 1rem; min-height: 2.75rem; max-width: 6.5rem; }
+  .more-below { min-height: 2.75rem; font-size: .9375rem; right: 1rem; left: auto; transform: none; padding: .5rem .9rem; }
+  html.design-root { scroll-padding-top: calc(var(--nav-height) + var(--house-height,0px) + 1rem); }
+}
+
+@media screen and (min-width:1100px) {
+  .studio-heading { margin-bottom: 1.5rem; }
+  .house-stage { margin-bottom: 1.5rem; }
+  .house-viewport, #house>svg.fit-view { max-height: 46dvh; }
+  .area-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+}
+
+@media screen and (max-width:1099px) {
+  .studio-heading { margin-bottom: 1.5rem; }
+  .house-stage { margin-bottom: 1.5rem; }
+  html.design-root { scroll-padding-top: calc(var(--nav-height) + var(--house-height,0px) + 1rem); }
+}
+
+@media screen and (max-width:999px) {
+  .materials-layout { display: block; }
+  .materials-outline { padding: 0; }
+  .materials-outline summary { min-height: 3rem; padding: .65rem 1rem; }
+  .materials-outline nav { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media screen and (max-width:760px) {
+  .top-nav, .top-nav.has-template { min-height: 4rem; padding: .5rem 1rem; gap: .25rem; }
+  .mobile-navigation { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; }
+  .mobile-page { font-size: 1rem; font-weight: 650; min-width: 0; }
+  .pages-toggle { display: flex; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .5rem .8rem; font-size: 1rem; border: 1px solid #9db0bb; border-radius: .5rem; background: #fff; }
+  .pages-toggle svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; }
+  .top-nav .nav-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); width: 100%; }
+  .navigation-ready .top-nav .nav-links { display: none; position: absolute; left: .75rem; right: .75rem; top: 100%; width: auto; max-height: 65dvh; overflow-y: auto; padding: .6rem; border: 1px solid #b7c8d1; border-radius: .7rem; background: #fff; box-shadow: 0 .8rem 2rem #243d4a26; }
+  .navigation-ready .top-nav.pages-open .nav-links { display: grid; }
+  .nav-links>a { font-size: 1rem; min-height: 3.25rem; padding: .7rem; }
+  .nav-template { font-size: .875rem; margin: 0; }
+  .studio, .quote-content, .photo-content, .downloads-content { padding: 1.5rem 1rem 4rem; }
+  .show-bar { padding: .35rem .7rem; }
+  .show-options { gap: .6rem; }
+  .house-viewport, #house>svg.fit-view { max-height: 28dvh; }
+  .design-mode-bar .instruction { font-size: 1.45rem; }
+  .area-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .quote-scope { grid-template-columns: 1fr; }
+  .dimension-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .quote-table th, .quote-table td { padding: .65rem .4rem; }
+  .quote-table .paint-dot { display: block; margin: 0 0 .35rem; width: 1.5rem; height: 1.5rem; }
+  .download-actions { display: grid; grid-template-columns: 1fr; }
+  .download-actions button { text-align: left; }
+  .materials-page .controls, .materials-page .assumptions { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .materials-page .controls>.field:first-child { grid-column: 1/-1; }
+  .materials-dock { padding: .5rem 1rem; }
+  .materials-dock .totals { grid-template-columns: repeat(2,minmax(0,1fr)); gap: .5rem; }
+  .materials-dock .total { padding: .6rem .7rem; min-width: 0; }
+  .materials-dock .total:first-child { grid-column: 1/-1; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .4rem .75rem; }
+  .materials-dock .total:first-child strong { margin: 0; }
+  .materials-dock .total small { font-size: .875rem; min-height: 0; }
+  .materials-dock .total strong { font-size: 1.3rem; overflow-wrap: anywhere; }
+  .materials-page .table-wrap { overflow: visible; }
+  .materials-page .table-wrap table, .materials-page .table-wrap tbody { display: block; min-width: 0; width: 100%; }
+  .materials-page .table-wrap thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); }
+  .materials-page .table-wrap tr { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid #c9d6dd; border-radius: .7rem; padding: .5rem; margin-bottom: 1rem; background: #fff; }
+  .materials-page .table-wrap td { display: block; min-width: 0; padding: .6rem; border: 0; white-space: normal; }
+  .materials-page .table-wrap td:first-child { grid-column: 1/-1; font-weight: 600; }
+  .materials-page .table-wrap td p { font-weight: 400; max-width: none; }
+  .materials-page .table-wrap td:not(:first-child)::before { content: attr(data-label); display: block; margin-bottom: .4rem; font-size: .875rem; font-weight: 600; color: var(--muted); }
+  .materials-page .table-wrap td.qty { grid-column: 1/-1; }
+  .materials-page .table-wrap td input { width: 100%; max-width: 7rem; }
+  .materials-page .table-wrap td.qty input { max-width: 6.5rem; }
+}
+
+@media screen and (max-width:480px) {
+  .area-grid { grid-template-columns: 1fr; }
+  .area-card { display: grid; grid-template-columns: minmax(0,1fr) minmax(5rem,.5fr); gap: .4rem .85rem; padding: .85rem; }
+  .area-title { margin: 0; }
+  .paint-subtitle { grid-column: 1/-1; margin: .1rem 0 0; }
+  .read-only-swatch, .swatch-picker { align-self: center; }
+  .materials-page .controls, .materials-page .assumptions { grid-template-columns: 1fr; }
+  .materials-page .controls>.field:first-child { grid-column: auto; }
+  .materials-dock .total small { font-size: .875rem; }
+}
+
+@media screen and (max-height:600px) {
+  .house-stage, .materials-dock, .materials-outline { position: static; }
+  html.design-root, html.materials-root { scroll-padding-top: calc(var(--nav-height) + 1rem); }
+}
+
+@media screen {
+  /* Pane decisions also follow text size, not just a device-width label. */
+  .navigation-compact .top-nav, .navigation-compact .top-nav.has-template { min-height: 4rem; padding: .5rem 1rem; gap: .25rem; }
+  .navigation-compact .mobile-navigation { display: flex; align-items: center; justify-content: space-between; gap: 1rem; width: 100%; }
+  .navigation-compact .mobile-page { flex: 1; min-width: 0; overflow-wrap: anywhere; font-size: 1rem; font-weight: 650; line-height: 1.35; }
+  .navigation-compact .pages-toggle { display: flex; flex: none; align-items: center; gap: .5rem; min-height: 2.75rem; padding: .5rem .8rem; font-size: 1rem; border: 1px solid #9db0bb; border-radius: .5rem; background: #fff; }
+  .navigation-compact .pages-toggle svg { width: 1.2rem; height: 1.2rem; fill: none; stroke: currentColor; stroke-width: 2; }
+  .navigation-compact .top-nav .nav-links { display: none; position: absolute; left: .75rem; right: .75rem; top: 100%; width: auto; max-height: 65dvh; overflow-y: auto; grid-template-columns: repeat(2,minmax(0,1fr)); padding: .6rem; border: 1px solid #b7c8d1; border-radius: .7rem; background: #fff; box-shadow: 0 .8rem 2rem #243d4a26; }
+  .navigation-compact .top-nav.pages-open .nav-links { display: grid; }
+  .navigation-compact .nav-links>a { font-size: 1rem; min-height: 3.25rem; padding: .7rem; overflow-wrap: anywhere; }
+  .navigation-compact .nav-template { font-size: .875rem; margin: 0; }
+  html.flow-design .house-stage, html.flow-materials .materials-dock, html.flow-materials .materials-outline { position: static; }
+  html.design-root.flow-design, html.materials-root.flow-materials { scroll-padding-top: calc(var(--nav-height) + 1rem); }
+  .hens-page .henhouse h1 { font-size: 2.5rem; }
+  .hens-page .coop-intro { font-size: 1.125rem; }
+  .hens-page :is(.research-credit,.egg-explainer,.painter-contact-name,.contact-standing,.painter-notes,.hen-attribution,.hen-source) { font-size: 1rem; }
+  .hens-page :is(.coop-eyebrow,.painter-position,.hen-slide-kind,.slide-paging,.hen-play) { font-size: .9375rem; }
+  .hens-page .blue-egg-award { font-size: .875rem; flex-basis: 6rem; }
+  .hens-page .painter-heading h2 { font-size: 1.65rem; }
+  .hens-page .hen-quote { font-size: 1.25rem; }
+  .hens-page .painter-notes h3 { font-size: 1rem; }
+  .hens-page .painter-notes summary { min-height: 2.75rem; }
+  .hens-page .painter-contacts a, .hens-page .save-painter { font-size: 1rem; min-height: 2.75rem; }
+  .sunny-painter-list button { min-height: 2.75rem; font-size: 1rem; padding: .5rem .7rem; border: 1px solid #a9bdc8; border-radius: .4rem; background: #fff; }
+}
+
+@media screen and (max-width:760px) {
+  .hens-page .henhouse h1 { font-size: 1.8rem; }
+  .hens-page .hen-slide { grid-template-columns: minmax(0,1fr); gap: .5rem; }
+  .hens-page .hen-speaker { width: 6rem; height: 7rem; justify-self: center; }
+  .hens-page .hen-carousel-controls { flex-wrap: wrap; justify-content: center; }
+  .hens-page .slide-paging { white-space: normal; flex-wrap: wrap; justify-content: center; }
+  .hens-page .coop-toolbar { flex-wrap: wrap; }
+  .hens-page .coop-toolbar>button { max-width: none; }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+.showcase{max-width:1200px;margin:auto;padding:30px 22px 70px}.showcase h1{font:400 38px/1.15 Georgia,serif;margin:10px 0 14px}.showcase .intro{font-size:18px;line-height:1.6;color:#526c76}.showcase-house{background:white;border:1px solid #d6e0e4;border-radius:14px;padding:15px;margin:24px 0}.showcase-house svg{display:block;width:100%;height:auto;max-height:540px}.showcase-house .selected-zone{stroke:#bf582d!important;stroke-width:5!important}.showcase-house .selected-number circle{fill:#bf582d;stroke:#bf582d}.showcase-house .selected-number text{fill:white}.showcase-house.no-numbers .number{display:none}.showcase-choices{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin:22px 0}.showcase-choices label{font-size:16px}.showcase-choices select{font:inherit;padding:12px;border:1px solid #a8bec8;border-radius:7px;max-width:100%;background:white}.showcase-choices input{width:20px;height:20px;vertical-align:middle}.showcase-paints{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.showcase-paint{background:white;text-align:left;padding:15px;border:1px solid #d1dfe4;border-radius:9px;color:#294650;font:16px/1.45 system-ui,sans-serif;cursor:pointer}.showcase-paint[aria-pressed=true]{border:2px solid #bf582d}.showcase-paint strong{display:block}.showcase-paint i{display:block;height:30px;border:1px solid #75899555;border-radius:4px;margin:11px 0}.showcase-paint small{font-size:14px}.showcase-paint:focus-visible,.showcase select:focus-visible{outline:3px solid #b87f39;outline-offset:3px}.showcase-signin{padding:24px;background:#e8f0f3;border-radius:12px;margin-top:28px;font-size:18px;line-height:1.6}.showcase-signin a,.studio-login-button{display:inline-block;background:#426b7c;color:white;border-radius:8px;padding:12px 19px;text-decoration:none;margin-top:10px}.studio-login{max-width:720px;margin:40px auto;padding:35px 25px;line-height:1.65}.studio-login h1{font:400 39px/1.15 Georgia,serif}.studio-login li{margin:15px 0;font-size:18px}.studio-login-button[aria-disabled=true]{background:#d8e2e6;color:#516b76;pointer-events:none}.studio-login .login-note{font-size:16px;color:#526c76}@media(max-width:600px){.showcase{padding:23px 16px 50px}.showcase h1{font-size:30px}.showcase-house{padding:8px}.showcase-choices{display:block}.showcase-choices label{display:block;margin:14px 0}.showcase-choices select{width:100%}.showcase-paints{grid-template-columns:1fr 1fr}.showcase-paint{padding:12px;font-size:15px}.showcase-signin{padding:20px}.studio-login{margin:20px auto}}
+</style></head><body><header class="top-nav"><div class="mobile-navigation"><span id="mobile-page" class="mobile-page">House Paint Studio</span><button id="pages-toggle" class="pages-toggle" type="button" aria-expanded="false" aria-controls="page-links"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Pages</button></div><nav id="page-links" class="nav-links" aria-label="Main navigation"><a id="nav-design" href="index.html">Drawings</a><a id="nav-hens" href="hens.html">Opinionated Hens</a><a id="nav-login" href="login.html">Log in to the full studio</a></nav><div class="nav-actions" hidden><button id="nav-download" class="icon-button" aria-label="Download" title="Download" aria-haspopup="menu" aria-expanded="false" aria-controls="download-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></svg></button><button id="nav-link" class="icon-button" aria-label="Copy page link" title="Copy link"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 15 6-6m-7 8H6a4 4 0 0 1-3-7l4-4a4 4 0 0 1 6 0m-2 12a4 4 0 0 0 6 0l4-4a4 4 0 0 0-3-7h-2"/></svg></button><button id="nav-print" class="icon-button" aria-label="Print" title="Print"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8V3h12v5M6 17H3V8h18v9h-3M6 14h12v7H6Zm12-3h.01"/></svg></button></div><p id="nav-template" class="nav-template" hidden></p><div id="download-menu" class="download-menu" role="menu" aria-label="Download options" hidden></div></header><div id="nav-status" role="status" aria-live="polite" class="nav-status"></div><input id="nav-copy-field" aria-label="Page link to copy" readonly hidden>
+
+<main class="showcase"><h1>House Paint Studio</h1><p class="intro">A little house. A very particular palette. Made by an unreasonable daughter and some highly opinionated hens-adjacent tradesmen.</p><p>Current Template: <strong id="showcase-name"></strong><br><em id="showcase-subtitle"></em></p><div id="showcase-house" class="showcase-house"><svg xmlns="http://www.w3.org/2000/svg" width="1600" height="600" viewBox="0 0 1600 600" role="img" aria-labelledby="title description">
+<title id="title">Exterior paint layout - straight-on front study</title>
+
+
+<defs><pattern id="excluded-hatch" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><rect width="10" height="10" fill="#eef1f2"/><path d="M0 0V10" stroke="#d6dfe3" stroke-width="1"/></pattern></defs>
+<style>
+.surface{stroke:#3c4e58;stroke-width:1.5;stroke-linejoin:round;stroke-linecap:round}
+.context{stroke:#77868e;stroke-width:1.3;stroke-linejoin:round}
+.detail{fill:none;stroke:#7b8b94;stroke-width:1.2;stroke-linejoin:round;stroke-linecap:round}
+.division{stroke:#657983;stroke-width:.9;stroke-dasharray:4 3}
+.number circle{fill:white;stroke:#344f5b;stroke-width:1.5}
+.number text{font-family:Arial,sans-serif;font-size:18px;font-weight:bold;text-anchor:middle;dominant-baseline:central;fill:#24414e;stroke:none}
+.context-label{font-family:Arial,sans-serif;font-size:12px;letter-spacing:.8px;fill:#667984;text-anchor:middle;stroke:none}
+.reconstruction{fill:none;stroke:#a67530;stroke-width:1.5;stroke-dasharray:5 4}
+</style>
+<g id="roof-context">
+<path id="connector-shingles" class="context" data-scope="excluded" d="M590 258L690 225H929L921 291H590Z" fill="#d0d5d7"/>
+<path id="connector-shingle-lines" class="detail" data-scope="excluded" d="M660 251H863M644 266H861M686 237H886" />
+</g>
+<g id="main-stucco">
+<path id="right-main-gable-wall" class="surface" data-zone="1" fill="#98a9b7" d="M1035 160L1090 118L1515 290V505H1035Z"/>
+<path id="garage-front-stucco" class="surface" data-zone="9" fill="#98a9b7" d="M90 275L365 98L640 275V505H90Z M160 505V340Q160 294 206 294H524Q570 294 570 340V505Z" fill-rule="evenodd"/>
+<path id="recessed-left-wall" class="surface" data-zone="9" fill="#98a9b7" d="M650 295H880V505H650Z"/>
+</g>
+<g id="painted-roofline">
+<path id="main-gable-soffit" class="surface" data-zone="8" fill="#dcd8d0" d="M1030 154L1090 102L1536 282L1515 294L1090 122L1048 164Z" />
+<path id="main-gable-fascia" class="surface" data-zone="13" fill="#dcd8d0" d="M1018 145L1090 88L1544 270L1536 282L1090 102L1030 154Z" />
+<path id="recessed-return-fascia" class="surface" data-zone="13" fill="#dcd8d0" d="M650 277H880V285H650Z"/>
+<path id="recessed-return-soffit" class="surface" data-zone="8" fill="#dcd8d0" d="M650 285H880V295H650Z"/>
+<path id="garage-soffit" class="surface" data-zone="8" fill="#dcd8d0" d="M72 270L365 82L658 270L640 282L365 104L90 282Z" />
+<path id="garage-fascia" class="surface" data-zone="13" fill="#dcd8d0" d="M62 258L365 64L668 258L658 270L365 82L72 270Z" />
+</g>
+<g id="garage-accents">
+<path id="garage-opening-surround" class="surface" data-zone="5" fill="#768b9a" d="M160 505V340Q160 294 206 294H524Q570 294 570 340V505Z M178 505V341Q178 312 207 312H523Q552 312 552 341V505Z" fill-rule="evenodd"/>
+<path id="garage-low-band-left" class="surface" data-zone="6" fill="#768b9a" d="M90 441H160V464H90Z" />
+<path id="garage-low-band-right" class="surface" data-zone="6" fill="#768b9a" d="M570 441H640V464H570Z" />
+<path id="recessed-low-band" class="surface" data-zone="6" fill="#768b9a" d="M650 448H889V471H650Z" />
+</g>
+<g id="garage-opening">
+<path id="garage-opening-excluded" class="context" data-scope="excluded" d="M178 505V341Q178 312 207 312H523Q552 312 552 341V505Z" fill="url(#excluded-hatch)"/>
+<text class="context-label" x="365" y="405">GARAGE DOOR / OPENING</text><text class="context-label" x="365" y="424">NOT BEING PAINTED</text>
+</g>
+<g id="left-window-reconstructed" transform="translate(-8 0)">
+<path id="left-window-arched-accent" class="surface" data-zone="7" fill="#768b9a" d="M698 466V385A75 75 0 0 1 848 385V466Z M707 457V385A66 66 0 0 1 839 385V457Z" fill-rule="evenodd"/>
+<path id="left-window-glass-excluded" class="context" data-scope="excluded" d="M707 457V385A66 66 0 0 1 839 385V457Z" fill="url(#excluded-hatch)"/>
+<path id="left-window-frame-excluded" class="detail" data-scope="excluded" d="M707 385H839M773 319V457" />
+
+</g>
+<g id="right-window" transform="matrix(.94 0 0 .8920454545 69.4 33.89772727)">
+<path id="under-window-stucco-accent" class="surface" data-zone="12" fill="#768b9a" fill-rule="evenodd" d="M1300 447H1430V490H1300Z M1309 447V481H1421V447Z"/>
+<path id="right-window-arched-accent" class="surface" data-zone="7" fill="#768b9a" d="M1300 433V390A65 65 0 0 1 1430 390V433Z M1309 424V390A56 56 0 0 1 1421 390V424Z" fill-rule="evenodd"/>
+<path id="right-window-glass-excluded" class="context" data-scope="excluded" d="M1309 424V390A56 56 0 0 1 1421 390V424Z" fill="#e4edf1"/>
+<path id="right-window-fan-muntins" class="detail" data-scope="excluded" d="M1340 406A25 25 0 0 1 1390 406M1309 406H1421M1347 387L1323 354M1365 381V334M1383 387L1407 354" />
+<path id="right-window-lower-shutter-excluded" class="context" data-scope="excluded" d="M1309 406H1421V435H1309Z" fill="url(#excluded-hatch)"/>
+<path id="right-window-head-rail-excluded" class="context" data-scope="excluded" d="M1285 314H1445V321H1285Z" fill="#f2f3f1"/>
+<path id="right-window-side-rails-excluded" class="context" data-scope="excluded" d="M1285 321H1297V441H1285Z M1433 321H1445V441H1433Z" fill="url(#excluded-hatch)"/>
+<path id="right-window-sill-excluded" class="context" data-scope="excluded" d="M1280 441H1450V449H1280Z" fill="#eff2f2"/>
+</g>
+<g id="entry-portico">
+<path id="entry-gable-face" class="surface" data-zone="2" fill="#dcd8d0" d="M880 295L1035 171L1190 295V505H880Z M935 505V374A100 100 0 0 1 1135 374V505Z" fill-rule="evenodd"/>
+<path id="entry-arch-recess" class="surface" data-zone="3" fill="#98a9b7" d="M935 505V374A100 100 0 0 1 1135 374V505H1118V374A83 83 0 0 0 952 374V505Z" />
+<path id="entry-recessed-door-wall" class="surface" data-zone="10" fill="#98a9b7" d="M952 505V374A83 83 0 0 1 1118 374V505Z" />
+<path id="entry-high-band-left" class="surface" data-zone="4" fill="#98a9b7" d="M880 365H935V390H880Z" />
+<path id="entry-high-band-right" class="surface" data-zone="4" fill="#98a9b7" d="M1135 365H1190V390H1135Z" />
+<path id="entry-low-band-left" class="surface" data-zone="4" fill="#98a9b7" d="M880 448H935V471H880Z" />
+<path id="entry-low-band-right" class="surface" data-zone="4" fill="#98a9b7" d="M1135 448H1190V471H1135Z" />
+<path id="entry-soffit" class="surface" data-zone="8" fill="#dcd8d0" d="M862 288L1035 151L1208 288L1190 301L1035 178L880 301Z" />
+<path id="entry-fascia" class="surface" data-zone="13" fill="#dcd8d0" d="M852 276L1035 131L1218 276L1208 288L1035 151L862 288Z" />
+</g>
+<g id="entry-door-and-fanlight">
+<path id="door-frame-excluded" class="context" data-scope="excluded" d="M975 353H1095V505H975Z" fill="#f2f3f1"/>
+<path id="door-left-excluded" class="context" data-zone="11" data-quote="optional-door-study" d="M982 360H1035V498H982Z" fill="url(#excluded-hatch)"/>
+<path id="door-right-excluded" class="context" data-zone="11" data-quote="optional-door-study" d="M1035 360H1088V498H1035Z" fill="url(#excluded-hatch)"/>
+<ellipse id="door-left-oval-glass" data-scope="excluded" class="context" cx="1008" cy="428" rx="15" ry="53" fill="#dfe9ed"/><ellipse id="door-right-oval-glass" data-scope="excluded" class="context" cx="1062" cy="428" rx="15" ry="53" fill="#dfe9ed"/>
+<path id="door-handles" class="detail" data-scope="excluded" d="M1027 427V438M1043 427V438" />
+<path id="door-fanlight-excluded" class="context" data-scope="excluded" d="M975 344A60 60 0 0 1 1095 344Z" fill="#dfe9ee"/>
+<path id="door-fanlight-muntins" class="detail" data-scope="excluded" d="M1007 344A28 28 0 0 1 1063 344M1015 324L993 301M1035 316V284M1055 324L1077 301" />
+</g>
+<g id="fixtures-and-drainage">
+<path id="garage-left-lantern" class="context" data-scope="excluded" d="M119 342H137V373H119ZM122 337H134L128 326Z" fill="#e7ecee"/>
+<path id="garage-right-lantern" class="context" data-scope="excluded" d="M591 342H609V373H591ZM594 337H606L600 326Z" fill="#e7ecee"/>
+<path id="porch-lantern" class="context" data-scope="excluded" d="M1035 282V295M1026 296H1044L1040 318H1030Z" fill="#e7ecee"/>
+<path id="garage-downspout-excluded" class="context" data-scope="excluded" d="M643 278H653V302L637 318V487Q637 500 623 500H612V493H623Q629 493 629 487V314L643 299Z" fill="#e7ecee"/>
+<path id="garage-left-gutter-excluded" class="context" data-scope="excluded" d="M74 278H82V295Q82 304 94 306L101 308V316L92 314Q74 311 74 295Z" fill="#e7ecee"/>
+</g>
+<path id="ground-contact" class="detail" data-scope="excluded" d="M78 506H1515" />
+<g id="numbering">
+<g id="label-soffits" class="number" data-zone-label="8"><path d="M1455 234L1470 265" fill="none" stroke="#344f5b"/><circle cx="1450" cy="220" r="14"/><text x="1450" y="220">8</text></g>
+<g id="label-door-study" class="number" data-zone-label="11"><circle cx="1035" cy="480" r="12"/><text x="1035" y="480" style="font-size:14px">11</text></g>
+<g id="label-body-garage" class="number" data-zone-label="9"><circle cx="365" cy="209" r="14"/><text x="365" y="209">9</text></g>
+<g id="label-body-right" class="number" data-zone-label="1"><circle cx="1405" cy="274" r="14"/><text x="1405" y="274">1</text></g>
+<g id="label-entry-face" class="number" data-zone-label="2"><circle cx="1035" cy="226" r="14"/><text x="1035" y="226">2</text></g>
+<g id="label-entry-arch" class="number" data-zone-label="3"><path d="M1162 421H1126" fill="none" stroke="#344f5b"/><circle cx="1172" cy="421" r="14"/><text x="1172" y="421">3</text></g>
+<g id="label-entry-bands" class="number" data-zone-label="4"><circle cx="1165" cy="377" r="14"/><text x="1165" y="377">4</text></g>
+<g id="label-garage-surround" class="number" data-zone-label="5"><path d="M240 334V301" fill="none" stroke="#344f5b"/><circle cx="240" cy="343" r="14"/><text x="240" y="343">5</text></g>
+<g id="label-low-band" class="number" data-zone-label="6"><circle cx="120" cy="453" r="14"/><text x="120" y="453">6</text></g>
+<g id="label-window-right" class="number" data-zone-label="7"><path d="M1352.5 298V329" fill="none" stroke="#344f5b"/><circle cx="1352.5" cy="295" r="14"/><text x="1352.5" y="295">7</text></g>
+<g id="label-window-left" class="number" data-zone-label="7"><path d="M765 292V314" fill="none" stroke="#344f5b"/><circle cx="765" cy="287" r="14"/><text x="765" y="287">7</text></g>
+<g id="label-door-recess" class="number" data-zone-label="10"><path d="M1220 483H1108V474" fill="none" stroke="#344f5b"/><circle cx="1234" cy="483" r="14"/><text x="1234" y="483" style="font-size:15px">10</text></g>
+<g id="label-lower-window-trim" class="number" data-zone-label="12"><path d="M1458 455H1422" fill="none" stroke="#344f5b"/><circle cx="1472" cy="455" r="14"/><text x="1472" y="455" style="font-size:15px">12</text></g>
+<g id="label-fascia" class="number" data-zone-label="13"><path d="M522 186V175" fill="none" stroke="#344f5b"/><circle cx="522" cy="193" r="14"/><text x="522" y="193">13</text></g>
+</g>
+</svg>
+</div><div class="showcase-choices"><label>Choose a palette <select id="showcase-template" aria-label="Choose a palette"></select></label><label><input type="checkbox" id="showcase-numbers" checked> Show paint numbers</label></div><div id="showcase-paints" class="showcase-paints"></div><section class="showcase-signin"><strong>The family studio</strong><p>More room to play, photo mockups, materials and quote tools.</p><a id="showcase-login" href="login.html">Log in to the full studio</a></section></main>
+<script type="application/json" id="studio-data">{"version":1,"title":"House Paint Studio","defaultName":"Porch Swing Harmony","defaultSubtitle":"Swing Not Included","paints":{"aleutian":{"name":"Aleutian","code":"SW 6241","hex":"#98a9b7"},"bracing":{"name":"Bracing Blue","code":"SW 6242","hex":"#768b9a"},"upward":{"name":"Upward","code":"SW 6239","hex":"#bfc9d0"},"drift":{"name":"Drift of Mist","code":"SW 9166","hex":"#dcd8d0"},"purewhite":{"name":"Pure White","code":"SW 7005","hex":"#edece6"},"clary":{"name":"Clary Sage","code":"SW 6178","hex":"#acad97"},"rosemary":{"name":"Rosemary","code":"SW 6187","hex":"#64695c"},"olive":{"name":"Olive Grove","code":"SW 7734","hex":"#857c5d"},"ripe":{"name":"Ripe Olive","code":"SW 6209","hex":"#44483d"},"contented":{"name":"Contented","code":"SW 6191","hex":"#bdc0b3"},"linen":{"name":"Natural Linen","code":"SW 9109","hex":"#dfd3c3"},"beige":{"name":"Accessible Beige","code":"SW 7036","hex":"#d1c7b8"},"existing":{"name":"Keep existing / not painted","code":"Door preview off","hex":"#eef1f2"},"mythical":{"name":"Mythical","code":"SW 6550","hex":"#7e778e"},"humorous-green":{"name":"Humorous Green","code":"SW 6918","hex":"#c6b836"},"rosebay":{"name":"Rosebay","code":"SW 6563","hex":"#cb9aad"},"tantalizing-teal":{"name":"Tantalizing Teal","code":"SW 6937","hex":"#87dcce"},"marigold":{"name":"Marigold","code":"SW 6664","hex":"#d28233"},"passionate-purple":{"name":"Passionate Purple","code":"SW 6981","hex":"#795484"},"free-spirit":{"name":"Free Spirit","code":"SW 6973","hex":"#cab2d2"}},"zones":[{"id":"1","name":"Main house body","paint":"aleutian","optional":false},{"id":"2","name":"Entry gable face","paint":"drift","optional":false},{"id":"3","name":"Inside arch & returns","paint":"aleutian","optional":false},{"id":"4","name":"Entry bands","paint":"aleutian","optional":false},{"id":"5","name":"Garage opening surround","paint":"bracing","optional":false},{"id":"6","name":"Low horizontal bands","paint":"bracing","optional":false},{"id":"7","name":"Window accents","paint":"bracing","optional":false},{"id":"8","name":"Soffits","paint":"drift","optional":false},{"id":"9","name":"Garage and left return","paint":"aleutian","optional":false},{"id":"10","name":"Porch back wall","paint":"aleutian","optional":false},{"id":"11","name":"Door colour study","paint":"existing","optional":true},{"id":"12","name":"Below-window trim","paint":"bracing","optional":false},{"id":"13","name":"Fascia & roof-edge trim","paint":"drift","optional":true}],"combinations":[{"name":"Blue Skies & Biscuits","subtitle":"When weather cooperates","values":{"1":"upward","2":"drift","3":"bracing","4":"bracing","5":"aleutian","6":"aleutian","7":"aleutian","8":"aleutian","9":"upward","10":"upward","11":"existing","12":"aleutian","13":"aleutian"}},{"name":"Midnight at the Henhouse","subtitle":"Floodlight installed for safety","values":{"1":"bracing","2":"upward","3":"aleutian","4":"aleutian","5":"aleutian","6":"aleutian","7":"aleutian","8":"aleutian","9":"bracing","10":"upward","11":"existing","12":"aleutian","13":"aleutian"}},{"name":"Sunday Best at the Coop","subtitle":"Even the hens dressed up.","values":{"1":"aleutian","2":"purewhite","3":"aleutian","4":"aleutian","5":"bracing","6":"aleutian","7":"aleutian","8":"purewhite","9":"aleutian","10":"aleutian","11":"existing","12":"aleutian","13":"purewhite"}},{"name":"Lazy Florida Morning","subtitle":"The cows never left home","values":{"1":"upward","2":"purewhite","3":"aleutian","4":"aleutian","5":"aleutian","6":"aleutian","7":"aleutian","8":"aleutian","9":"upward","10":"upward","11":"existing","12":"aleutian","13":"aleutian"}},{"name":"Blue Ribbon Roost","subtitle":"First in most opinionated hens.","values":{"1":"aleutian","2":"bracing","3":"upward","4":"upward","5":"upward","6":"upward","7":"upward","8":"upward","9":"aleutian","10":"aleutian","11":"existing","12":"upward","13":"upward"}},{"name":"Blue Eggs In A Basket","subtitle":"Uncounted for your convenience.","values":{"1":"upward","2":"bracing","3":"aleutian","4":"aleutian","5":"aleutian","6":"aleutian","7":"aleutian","8":"aleutian","9":"upward","10":"upward","11":"existing","12":"aleutian","13":"aleutian"}},{"name":"Sage Advice","subtitle":"Except on which color scheme to pick","values":{"1":"drift","2":"drift","3":"clary","4":"clary","5":"purewhite","6":"purewhite","7":"purewhite","8":"purewhite","9":"clary","10":"drift","11":"existing","12":"purewhite","13":"purewhite"}},{"name":"Harmony Through The Garden Gate","subtitle":"Inside the house, too, sometimes.","values":{"1":"clary","2":"drift","3":"rosemary","4":"rosemary","5":"rosemary","6":"rosemary","7":"rosemary","8":"purewhite","9":"clary","10":"clary","11":"existing","12":"rosemary","13":"purewhite"}},{"name":"Rosemary After Supper","subtitle":"Gluten free AND low carb!","values":{"1":"drift","2":"drift","3":"rosemary","4":"rosemary","5":"purewhite","6":"purewhite","7":"purewhite","8":"purewhite","9":"rosemary","10":"drift","11":"existing","12":"purewhite","13":"purewhite"}},{"name":"Hen Hour at the Blue House","subtitle":"The rooster did not rsvp","values":{"1":"drift","2":"drift","3":"bracing","4":"bracing","5":"purewhite","6":"purewhite","7":"purewhite","8":"purewhite","9":"bracing","10":"drift","11":"existing","12":"purewhite","13":"purewhite"}},{"name":"Full Tropical Incident","subtitle":"Neighbors will love it.","values":{"1":"#7b7599","2":"#aeb011","3":"#dcd8d0","4":"#d1c7b8","5":"#bdc0b3","6":"#bfc9d0","7":"#cd98b4","8":"#6deec7","9":"#cd740e","10":"#a741fb","11":"#d5a5ee","12":"#44483d","13":"#6deec7"}},{"name":"Full Tropical Incident — Sherwin-Williams Edition","subtitle":"The hens have found the paint aisle.","values":{"1":"mythical","2":"humorous-green","3":"#dcd8d0","4":"#d1c7b8","5":"#bdc0b3","6":"#bfc9d0","7":"rosebay","8":"tantalizing-teal","9":"marigold","10":"passionate-purple","11":"free-spirit","12":"#44483d","13":"tantalizing-teal"}}]}</script><script>/* Palette state shared by the design, quote and materials pages. */
+(() => {
+  'use strict';
+  const hex=/^#[0-9a-f]{6}$/i,copy=v=>JSON.parse(JSON.stringify(v));
+  function create(data,saved){
+    const templates=[{id:'0',name:data.defaultName||'Porch Swing Harmony',subtitle:data.defaultSubtitle||'Swing Not Included',values:Object.fromEntries(data.zones.map(z=>[z.id,z.paint]))},...data.combinations.map((c,i)=>({...c,id:String(i+1)}))];
+    const state={version:2,mode:'templates',active:{kind:'template',id:'0'},drafts:{},nextDraft:1,lastCustom:{},numbers:true,outline:false,zoom:100,selected:null};
+    function normalize(input){const values=input?.colours||input?.values||input||{},names=input?.names||{},p={colours:{},names:{}};for(const z of data.zones){let v=values[z.id]??(z.id==='13'?values['8']:undefined)??z.paint;if(names[z.id]==='existing'&&z.optional)v='existing';let key=typeof v==='string'&&Object.hasOwn(data.paints,v)?v:null;let colour=key?data.paints[key].hex:typeof v==='object'?v.hex:v;if(!hex.test(colour))throw Error('Invalid paint for area '+z.id);if(key==='existing'&&!z.optional)throw Error('This area needs a paint colour');p.colours[z.id]=colour.toLowerCase();p.names[z.id]=key||Object.keys(data.paints).find(k=>(k!=='existing'||z.optional)&&data.paints[k].hex.toLowerCase()===colour.toLowerCase())||'custom';}return p;}
+    const same=(a,b)=>data.zones.every(z=>a.colours[z.id]===b.colours[z.id]);
+    function template(id){const t=templates.find(t=>t.id===id);if(!t)throw Error('Unknown template');return t;}
+    function current(){return state.active.kind==='custom'?state.drafts[state.active.id].palette:normalize(template(state.active.id).values);}
+    function newDraft(p,baseId=null){const id=String(state.nextDraft++);state.drafts[id]={id,baseId,palette:copy(p)};return id;}
+    function validActive(a){return a?.kind==='template'?templates.some(t=>t.id===a.id):a?.kind==='custom'&&Object.hasOwn(state.drafts,a.id);}
+    if(saved?.version===2){for(const [id,d] of Object.entries(saved.drafts||{})){try{state.drafts[id]={id,baseId:templates.some(t=>t.id===d.baseId)?d.baseId:null,palette:normalize(d.palette)};}catch{}}
+      state.nextDraft=Math.max(1,...Object.keys(state.drafts).map(v=>Number(v)+1).filter(Number.isFinite));state.lastCustom={...saved.lastCustom};if(validActive(saved.active))state.active=copy(saved.active);state.mode=saved.mode==='customize'?'customize':'templates';state.numbers=saved.numbers!==false;state.outline=!!saved.outline;state.zoom=[100,200,300].includes(saved.zoom)?saved.zoom:100;state.selected=data.zones.some(z=>z.id===saved.selected)?saved.selected:null;
+    }else if(saved?.colours){try{const p=normalize(saved),t=templates.find(t=>same(normalize(t.values),p));state.active=t?{kind:'template',id:t.id}:{kind:'custom',id:newDraft(p)};}catch{}}
+    function rememberCustom(){if(state.active.kind==='custom'){const d=state.drafts[state.active.id];state.lastCustom[d.baseId??'shared']=d.id;}}function customize(){if(state.active.kind==='template'){const baseId=state.active.id,p=current(),prior=state.drafts[state.lastCustom[baseId]]||Object.values(state.drafts).filter(d=>d.baseId===baseId).at(-1);state.active={kind:'custom',id:prior?.id||newDraft(p,baseId)};}rememberCustom();state.mode='customize';}
+    function select(value){rememberCustom();const [kind,id]=value.split(':');if(kind==='template'){template(id);state.active={kind,id};if(state.mode==='customize')customize();}else if(kind==='custom'&&Object.hasOwn(state.drafts,id)){state.active={kind,id};rememberCustom();}else throw Error('Unknown design');}
+    function setMode(mode){if(mode==='customize')customize();else{rememberCustom();state.mode='templates';}}
+    function edit(id,value){if(state.mode!=='customize'||state.active.kind!=='custom')throw Error('Choose Customize to change a paint');const z=data.zones.find(z=>z.id===id);if(!z)throw Error('Unknown area');const p=current(),next=normalize({colours:{...p.colours,[id]:value},names:{...p.names,[id]:value==='existing'?'existing':'custom'}});state.drafts[state.active.id].palette=next;state.selected=id;}
+    function loadShared(hash){const value=new URLSearchParams(hash.replace(/^#/, '')).get('c');if(!value)return false;const parts=value.split('.');if(![12,data.zones.length].includes(parts.length)||parts.some(v=>!hex.test('#'+v)))throw Error('Incomplete colour link');const p=normalize(Object.fromEntries(data.zones.slice(0,parts.length).map((z,i)=>[z.id,'#'+parts[i]])));if(same(current(),p))return true;const t=templates.find(t=>same(normalize(t.values),p));if(t)state.active={kind:'template',id:t.id};else{const d=Object.values(state.drafts).find(d=>same(d.palette,p));state.active={kind:'custom',id:d?.id||newDraft(p)};}state.mode='templates';return true;}
+    function label(){return state.active.kind==='custom'?'Custom':template(state.active.id).name;}
+    function subtitle(){return state.active.kind==='custom'?'Ooh fancy.':template(state.active.id).subtitle||'';}
+    function designOptions(){const visible=new Map();for(const d of Object.values(state.drafts))visible.set(d.baseId??'shared',d);for(const [base,id]of Object.entries(state.lastCustom)){if(state.drafts[id])visible.set(base,state.drafts[id]);}if(state.active.kind==='custom'){const d=state.drafts[state.active.id];visible.set(d.baseId??'shared',d);}return [...templates.map(t=>({value:'template:'+t.id,label:t.name,kind:'template'})),...[...visible.values()].map((d,i)=>({value:'custom:'+d.id,label:(i?'Custom template '+(i+1):'Custom template')+(d.baseId!==null?' — '+template(d.baseId).name:''),kind:'custom'}))];}
+    function colourHash(){return '#c='+data.zones.map(z=>current().colours[z.id].slice(1)).join('.');}
+    function paintLabel(id){const p=current(),key=p.names[id];return key==='existing'?'Existing surface · unpainted':Object.hasOwn(data.paints,key)?data.paints[key].name+' · '+data.paints[key].code:'Custom '+p.colours[id].toUpperCase();}
+    if(state.mode==='customize'&&state.active.kind==='template')customize();
+    return {state,templates,normalize,current,select,setMode,edit,loadShared,label,subtitle,designOptions,colourHash,paintLabel,snapshot:()=>copy(state)};
+  }
+  function read(data){let stored;try{stored=JSON.parse(localStorage.getItem('house-paint-workspace-v2'))||JSON.parse(localStorage.getItem('house-paint-studio-v1'));}catch{}const w=create(data,stored);try{w.loadShared(location.hash);}catch{}return w;}
+  function keep(w){try{localStorage.setItem('house-paint-workspace-v2',JSON.stringify(w.snapshot()));dispatchEvent(new CustomEvent('house-studio-change',{detail:{section:'design'}}));}catch{}}
+  window.HousePaintWorkspace={create,read,keep};
+})();
+</script><script>(() => {
+'use strict';
+window.installHouseNavigation=function({page,hash,template='',actions=[],onPrint=()=>window.print()}) {
+  const $=id=>document.getElementById(id), header=document.querySelector('.top-nav');
+  const menu=$('download-menu'), trigger=$('nav-download'), pages=$('pages-toggle');
+  const items=[...header.querySelectorAll('.nav-links>a')].map(link=>({link,path:link.getAttribute('href').split('#')[0]}));
+  const narrow=matchMedia('(max-width:760px)');
+  const notice=text=>{$('nav-status').textContent=text;};
+  document.documentElement.classList.add('navigation-ready');
+  function updateHash(value){hash=value;for(const {link,path} of items)link.href=path+(hash||'');}
+  updateHash(hash);
+  const current=$('nav-'+page);
+  current?.setAttribute('aria-current','page');
+  $('mobile-page').textContent=current?.textContent||'House Paint Studio';
+  function closePages(focus=false){header.classList.remove('pages-open');pages.setAttribute('aria-expanded','false');if(focus)pages.focus();}
+  pages.onclick=()=>{const open=pages.getAttribute('aria-expanded')!=='true';header.classList.toggle('pages-open',open);pages.setAttribute('aria-expanded',String(open));};
+  header.addEventListener('keydown',e=>{if(e.key==='Escape'&&header.classList.contains('pages-open')){e.preventDefault();closePages(true);}});
+  document.addEventListener('click',e=>{if(!header.contains(e.target))closePages();});
+  document.addEventListener('focusin',e=>{if(!header.contains(e.target))closePages();});
+  narrow.addEventListener('change',()=>closePages());
+  function updateTemplate(name){const show=page!=='design'&&!!name;$('nav-template').hidden=!show;$('nav-template').textContent='Template: '+name;header.classList.toggle('has-template',show);}
+  updateTemplate(template);
+  function fitLayout(){
+    const html=document.documentElement, rootSize=parseFloat(getComputedStyle(html).fontSize)||16;
+    html.classList.toggle('navigation-compact',innerWidth<Math.max(760,rootSize*70));
+    const navHeight=header.getBoundingClientRect().height;
+    html.style.setProperty('--nav-height',Math.ceil(navHeight)+'px');
+    const design=$('design-page'),house=$('house-stage'),dock=$('materials-dock'),outline=document.querySelector('.materials-outline summary');
+    html.classList.toggle('flow-design',!!(design&&!design.hidden&&house&&navHeight+house.getBoundingClientRect().height>innerHeight*.7));
+    html.classList.toggle('flow-materials',!!(dock&&navHeight+dock.getBoundingClientRect().height+(outline?.getBoundingClientRect().height||0)>innerHeight*.65));
+  }
+  const layoutObserver=new ResizeObserver(fitLayout);for(const element of [header,$('house-stage'),$('materials-dock'),document.querySelector('.materials-outline')])if(element)layoutObserver.observe(element);
+  addEventListener('resize',fitLayout);fitLayout();
+  function close(focus=false){menu.hidden=true;trigger.setAttribute('aria-expanded','false');if(focus)trigger.focus();}
+  function setActions(next){menu.replaceChildren();for(const action of next){const b=document.createElement('button');b.type='button';b.role='menuitem';b.textContent=action.label;b.onclick=async()=>{close();try{await action.run();}catch{notice('The download could not be completed.');}};menu.append(b);}}
+  setActions(actions);
+  trigger.onclick=()=>{if(!menu.hidden){close();return;}menu.hidden=false;trigger.setAttribute('aria-expanded','true');menu.querySelector('button')?.focus();};
+  trigger.onkeydown=e=>{if(e.key==='ArrowDown'){e.preventDefault();trigger.click();}};
+  menu.onkeydown=e=>{const bs=[...menu.querySelectorAll('button')],i=bs.indexOf(document.activeElement);if(e.key==='Escape'){e.preventDefault();close(true);}else if(['ArrowDown','ArrowUp','Home','End'].includes(e.key)){e.preventDefault();const n=e.key==='Home'?0:e.key==='End'?bs.length-1:(i+(e.key==='ArrowDown'?1:-1)+bs.length)%bs.length;bs[n]?.focus();}};
+  document.addEventListener('click',e=>{if(!menu.contains(e.target)&&!trigger.contains(e.target))close();});
+  $('nav-print').onclick=onPrint;
+  $('nav-link').onclick=async()=>{const url=new URL(location.href);url.searchParams.delete('download');url.searchParams.delete('copy');if(hash)url.hash=hash;try{await navigator.clipboard.writeText(String(url));notice('Link copied.');}catch{$('nav-copy-field').value=String(url);$('nav-copy-field').hidden=false;$('nav-copy-field').focus();$('nav-copy-field').select();notice('Copy this link.');}};
+  const cue=document.createElement('button');cue.type='button';cue.className='more-below';cue.textContent='More below ↓';cue.setAttribute('aria-label','Scroll down for more');document.body.append(cue);
+  const updateCue=()=>{cue.hidden=innerWidth>600||scrollY+innerHeight>=document.documentElement.scrollHeight-32||document.activeElement?.matches('input,select,textarea');};
+  cue.onclick=()=>window.scrollBy({top:Math.max(160,innerHeight*.45),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  addEventListener('scroll',updateCue,{passive:true});addEventListener('resize',updateCue);document.addEventListener('focusin',updateCue);document.addEventListener('focusout',()=>queueMicrotask(updateCue));
+  new ResizeObserver(updateCue).observe(document.body);updateCue();
+  return {updateHash,notice,setActions,updateTemplate};
+};
+})();
+</script><script>(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const data = JSON.parse($('studio-data').textContent), workspace = HousePaintWorkspace.read(data);
+  const nav = installHouseNavigation({page:'design',hash:workspace.colourHash(),template:workspace.label()});
+  const safe = v => String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const house = $('showcase-house'), select = $('showcase-template');
+  select.innerHTML = workspace.templates.map(t=>'<option value="template:'+t.id+'">'+safe(t.name)+'</option>').join('');
+  function render() {
+    $('showcase-name').textContent = workspace.label();
+    $('showcase-subtitle').textContent = '*'+workspace.subtitle();
+    if(workspace.state.active.kind==='custom'&&!select.querySelector('option[value=""]')){const option=document.createElement('option');option.value='';option.textContent='Custom palette';option.disabled=true;select.prepend(option);}
+    select.value = workspace.state.active.kind==='template' ? 'template:'+workspace.state.active.id : '';
+    const p = workspace.current();
+    for (const e of house.querySelectorAll('[data-zone]')) e.setAttribute('fill',p.names[e.dataset.zone]==='existing'?'url(#excluded-hatch)':p.colours[e.dataset.zone]);
+    $('showcase-paints').innerHTML = data.zones.map(z=>'<button type="button" class="showcase-paint" data-area="'+z.id+'" aria-pressed="false"><strong>'+z.id+' · '+safe(z.name)+'</strong><i style="background:'+safe(p.colours[z.id])+'" aria-hidden="true"></i><small>'+safe(workspace.paintLabel(z.id))+'</small></button>').join('');
+    choose(null);
+    nav.updateHash(workspace.colourHash()); nav.updateTemplate(workspace.label());
+    $('showcase-login').href = 'login.html'+workspace.colourHash();
+    const url = new URL(location.href); url.hash=workspace.colourHash();history.replaceState(null,'',url);
+    HousePaintWorkspace.keep(workspace);
+  }
+  function choose(id) {
+    house.querySelectorAll('[data-zone]').forEach(e=>e.classList.toggle('selected-zone',e.dataset.zone===id));
+    house.querySelectorAll('[data-zone-label]').forEach(e=>e.classList.toggle('selected-number',e.dataset.zoneLabel===id));
+    $('showcase-paints').querySelectorAll('[data-area]').forEach(e=>e.setAttribute('aria-pressed',String(e.dataset.area===id)));
+  }
+  select.onchange=()=>{workspace.setMode('templates');workspace.select(select.value);render();};
+  $('showcase-numbers').onchange=e=>house.classList.toggle('no-numbers',!e.target.checked);
+  $('showcase-paints').onclick=e=>{const b=e.target.closest('[data-area]');if(b)choose(b.dataset.area);};
+  house.onclick=e=>{const b=e.target.closest('[data-zone],[data-zone-label]');if(b)choose(b.dataset.zone||b.dataset.zoneLabel);};
+  render();
+})();
+</script><footer class="house-footer">Made with Love by Bayeses Wearing Sweaters To Work &lt;3<small>A small firm of highly opinionated hens-adjacent tradesmen.</small></footer></body></html>
